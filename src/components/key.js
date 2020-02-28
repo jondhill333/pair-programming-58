@@ -1,10 +1,10 @@
 import React from 'react';
 
 
-function Key(props) {
+function Key({icon, click}) {
   return (
-    <button onClick={props.func} className={props.name}>
-      {props.icon}
+    <button onClick={click}>
+      {icon}
         
     </button>
   );

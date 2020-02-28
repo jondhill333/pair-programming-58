@@ -1,8 +1,9 @@
 import React from 'react';
 
-function Display() {
+function Display({output}) {
   return (
-    <div className="App">
+    <div className="display">
+      { output }
         
     </div>
   );
