@@ -1,9 +1,9 @@
 import React from 'react';
 
 
-function Key (props) {
+function Key(props) {
   return (
-    <button className={props.name}>
+    <button onClick={props.func} className={props.name}>
       {props.icon}
         
     </button>

@@ -1,12 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
 import Keypad from './components/keypad';
 
 function App() {
+  const [number, setNumber] = useState(null);
   return (
     <div className="App">
-      <Keypad />
+      {number}
+      <Keypad setNumber={setNumber} />
         
     </div>
   );
