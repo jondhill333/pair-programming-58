@@ -3,8 +3,6 @@ import Key from './key'
 
 
 function Keypad({addToArray, calculate}) {
-      
-    const [operation, setOperation] = useState(null);
     
     const numbers = new Array(10).fill(0).map((number, i) => i);
     const operators = [
@@ -16,33 +14,29 @@ function Keypad({addToArray, calculate}) {
         {
             icon: "*",
             name: "multiply",
-            value: (n1, n2) => n1 * n2
+            value: (n1) => (n2) => n1 * n2
         },
         {
             icon: "/",
             name: "divide",
-            value: (n1, n2) => n1 / n2
+            value: (n1) => (n2) => n1 / n2
         },
         {
             icon: "-",
             name: "minus",
-            value: (n1, n2) => n1 - n2
+            value: (n1) => (n2) => n1 - n2
         }
     ]
-
-                    
+          
     const buttons = [
         ...numbers.map(n => <Key icon={n} click={() => addToArray(n) } /> ), 
-    ...operators.map(({icon, value}) => <Key icon={icon} click={() => addToArray(value) } />)
+    ...operators.map(({icon, value}) => <Key icon={icon} click={() => addToArray({icon, value}) } />)
     ];
     
   return (
     <div className="Keypad">
-    {buttons}
-    <Key icon={"="} click={calculate} />  
-    
-    
-   
+        {buttons}
+        <Key icon={"="} click={calculate} />  
     </div>
   );
     
